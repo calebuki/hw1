@@ -61,6 +61,99 @@ int main(int argc, char* argv[])
     delete counter2;
     counter2 = temp;
   }
+
+  std::cout << "testing only odds: " << std::endl;
+
+  test = new Node(0, nullptr);
+  tail = test;
+  for (int i = 1; i <= 11; i+= 2){
+    tail->next = new Node(i, nullptr);
+    tail = tail->next;
+  }
+
+  odds = nullptr;
+  evens = nullptr;
+
+  split(test,odds,evens);
+
+  counter1 = evens;
+  counter2 = odds;
+
+  std::cout << "evens: ";
+  while (counter1 != nullptr){
+    std::cout << counter1->value << " ";
+    counter1 = counter1->next;
+  }
+  std::cout << std::endl;
+
+  std::cout << "odds: ";
+  while (counter2 != nullptr){
+    std::cout << counter2->value << " ";
+    counter2 = counter2->next;
+  }
+  std::cout << std::endl;
+
+  //delete
+  counter1 = evens;
+  counter2 = odds;
+  while (counter1 != nullptr){
+    Node *temp = counter1->next;
+    delete counter1;
+    counter1 = temp;
+  }
+
+  while (counter2 != nullptr){
+    Node *temp = counter2->next;
+    delete counter2;
+    counter2 = temp;
+  }
+
+
+  std::cout << "testing only evens: " << std::endl;
+
+  test = new Node(0, nullptr);
+  tail = test;
+  for (int i = 2; i <= 12; i+= 2){
+    tail->next = new Node(i, nullptr);
+    tail = tail->next;
+  }
+
+  odds = nullptr;
+  evens = nullptr;
+
+  split(test,odds,evens);
+
+  counter1 = evens;
+  counter2 = odds;
+
+  std::cout << "evens: ";
+  while (counter1 != nullptr){
+    std::cout << counter1->value << " ";
+    counter1 = counter1->next;
+  }
+  std::cout << std::endl;
+
+  std::cout << "odds: ";
+  while (counter2 != nullptr){
+    std::cout << counter2->value << " ";
+    counter2 = counter2->next;
+  }
+  std::cout << std::endl;
+
+  //delete
+  counter1 = evens;
+  counter2 = odds;
+  while (counter1 != nullptr){
+    Node *temp = counter1->next;
+    delete counter1;
+    counter1 = temp;
+  }
+
+  while (counter2 != nullptr){
+    Node *temp = counter2->next;
+    delete counter2;
+    counter2 = temp;
+  }
   
 
 }
